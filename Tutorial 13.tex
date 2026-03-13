@@ -1,0 +1,183 @@
+\subsection{Part A: Decision making Simulation}
+
+\indent 
+
+Scenario: You are part of an IT management team deciding whether to migrate your organization’s servers to a new cloud platform. You have partial cost data, but security risks and user impact are uncertain.
+
+The tutorial should be divided into 2 groups. Each group discusses and chooses either a rational or intuitive approach to decide. Groups need to outline their reasoning (data-driven analysis vs instinct/experience). And finally, each group shares briefly how they made the decision.
+
+Hint: Focus on the trade-offs and connect to the IT specific challenges.
+
+\noindent\textbf{Rational approach}
+
+Rational decision-making focuses on structured, data-driven analysis. The team gathers available quantitative information and evaluates options logically.
+
+Steps Taken:
+
+\step Identify the problem: Need for efficient, scalable, and cost-effective infrastructure.
+
+\step Collect data: Migration cost estimates from vendors (partial data), Current infrastructure maintenance costs, Projected ROI and uptime improvements.
+
+\step Identify alternatives: Stay on-premise, Migrate fully to the cloud (AWS, Azure, GCP), Hybrid model (partial migration).
+
+\step Weigh the evidence: On-premise: secure but expensive and less scalable, Full cloud: scalable, but uncertain security risks. Hybrid: moderate cost, gradual transition, easier risk control.
+
+\step Choose alternative: Adopt a hybrid migration approach initially.
+
+\step Implement: Begin with non-critical workloads to test stability.
+
+\step Evaluate: Monitor cost, performance, and user feedback before full migration.
+
+\step Rationale: This approach minimizes risk through measurable metrics and stepwise implementation.
+
+\step Trade-offs Considered: Security vs. Scalability, Cost certainty vs. Innovation, Decision speed vs. thoroughness
+
+\bigskip
+
+\noindent\textbf{Intuitive approach}
+
+Intuitive decision-making relies on managerial experience, expert judgment, and instinct, especially when data is incomplete or ambiguous.
+
+Steps Taken:
+
+Based on prior cloud migration experience in similar organizations, the team trusts qualitative patterns over numbers.
+
+Intuition from IT leadership suggests that the long-term scalability and vendor reliability outweigh current security concerns.
+
+Decision: Proceed with full migration to the cloud, leveraging vendor-managed security.
+
+Reasoning: Speed, innovation, and competitive advantage are higher priorities than short-term risks.
+
+Trade-offs Considered: Accepting unknowns in data to avoid delay, Innovation vs. Control, choosing agility over risk aversion.
+
+\subsection{Part B: Case study analysis}
+
+\indent 
+
+You are the data team at an online retail company. The CEO wants to understand why customer satisfaction scores dropped in the last quarter. You have access to sales data, customer service logs, and website analytics. In each of your teams, answer the following questions:
+
+\bigskip 
+
+\noindent\textbf{What data sources would you use?}
+
+Sales data: Purchase frequency, product returns, order delays.
+
+Customer service logs: Complaint categories, response times, resolution rates.
+
+Website analytics: Page load speed, bounce rate, abandoned carts, session time.
+
+Optional: Customer feedback surveys, social media sentiment analysis.
+
+\bigskip
+
+\noindent\textbf{What BI tools or reports would help?}
+
+Power BI / Tableau Dashboards: Integrate and visualize satisfaction trends.
+
+Sentiment Analysis Reports: Track customer emotions in feedback or chat logs.
+
+Operational Dashboards: Real-time tracking of order fulfillment and response times.
+
+Trend Analysis Reports: Identify seasonal or regional performance changes.
+
+\bigskip
+
+\noindent\textbf{What type of decision could BI support here?}
+
+Tactical decisions: Improve specific business processes (e.g., delivery times, customer support efficiency).
+
+Operational decisions: Adjust staffing or logistics in customer service teams.
+
+Strategic decisions: Reassess vendor partnerships or UX redesign priorities.
+
+\bigskip
+
+\noindent\textbf{Which OLAP operations (slice, dice, drill down, etc.) would help analyse the issue?}
+
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|p{3.5cm}|p{11cm}|}
+\hline
+\textbf{OLAP Operation} & \textbf{Use Case Example} \\
+\hline
+
+\textbf{Slice} &
+Focus on Q3 sales only, to isolate the drop period. \\
+\hline
+
+\textbf{Dice} &
+Analyze sales by region and product category simultaneously. \\
+\hline
+
+\textbf{Drill Down} &
+Move from overall satisfaction to specific product complaints. \\
+\hline
+
+\textbf{Roll Up} &
+Aggregate weekly satisfaction data into quarterly trends. \\
+\hline
+
+\textbf{Pivot} &
+Rotate view between product categories vs. region to identify geographic patterns. \\
+\hline
+
+\end{tabular}
+\caption{OLAP Operations with Corresponding Use Case Examples}
+\end{table}
+
+
+\subsection{Part C: BI Architecture pipeline}
+
+\indent 
+
+Build your own BI Pipeline. You need to be as descriptive as possible and explain how the data flows in your pipeline and supports decision making. Try to create your own unique scenario!
+
+Example for a Food Delivery Company to optimize delivery efficiency and customer satisfaction.
+
+\begin{itemize}
+    \item Data Sources
+        \begin{itemize}
+            \item Delivery app logs (order times, delivery duration, locations).
+            \item Customer feedback ratings.
+            \item GPS data from drivers.
+            \item Restaurant performance data (prep time, accuracy).
+        \end{itemize}
+    \item ETL Process
+        \begin{itemize}
+            \item Extract: Data pulled daily from the app database and GPS tracking APIs.
+            \item Transform:
+                \begin{itemize}
+                    \item Clean missing or duplicate entries.
+                    \item Normalize restaurant and delivery time data.
+                    \item Aggregate satisfaction ratings.
+                \end{itemize}
+            \item Load: Load into a data warehouse (e.g., Snowflake, AWS Redshift).
+        \end{itemize}
+    \item Data warehouse/storage
+        \begin{itemize}
+            \item Central repository integrating all data by delivery ID.
+            \item Data marts for performance analysis (operations, customer experience, logistics)
+        \end{itemize}
+    \item OLAP \& Analytics Layer
+        \begin{itemize}
+            \item Apply OLAP operations:
+                \begin{itemize}
+                    \item Slice data by delivery zone.
+                    \item Drill down into high-delay regions.
+                    \item Roll up to see weekly averages.
+                \end{itemize}
+            \item Use predictive analytics to forecast delivery delays.
+        \end{itemize}
+    \item Presentation layer
+    \begin{itemize}
+        \item Dashboards: Power BI dashboard showing on-time delivery \%, satisfaction trends, and hotspot maps.
+        \item Reports: Monthly operational KPIs for management.
+    \end{itemize}
+    \item Decision making
+    \begin{itemize}
+        \item Operational decisions: Reallocate drivers to high-demand zones.
+        \item Strategic decisions: Partner with faster-performing restaurants.
+        \item Tactical decisions: Adjust delivery slot promises to customers.
+    \end{itemize}
+\end{itemize}

@@ -1,0 +1,96 @@
+\subsection{Part A – Case Study Analysis}
+
+\indent 
+
+As a team discuss in the tutorial:
+
+Background:
+
+CloudHealth Inc. provides telehealth services and stores patient records, appointment data, and billing information on a hybrid cloud. The public cloud hosts API-driven applications for patient portals, while sensitive medical records are on a private cloud. Employees work remotely and access cloud systems through VPN.
+
+Incident:
+
+An attacker exploited a vulnerable API endpoint exposed on the public cloud to deploy ransomware. Some patient data files were encrypted, causing downtime for the telehealth portal. Investigation shows that the API was not secured properly, logging was insufficient, and endpoint access controls were weak. MFA was inconsistently applied for remote staff.
+
+Impact:
+
+\begin{itemize}
+    \item Partial service disruption to telehealth users.
+    \item Temporary inability to access patient records and billing information.
+    \item Risk of regulatory non-compliance (GDPR and local health data regulations).
+    \item Reputational damage due to media coverage.
+\end{itemize}
+
+\bigskip
+
+\noindent\textbf{Questions:}
+
+\noindent\textbf{Identify the primary causes of this security incident.}
+
+Vulnerable API endpoint: The public cloud API was exposed and improperly secured, allowing attackers to exploit it.
+
+Weak access controls: Endpoint access restrictions were insufficient, and MFA was inconsistently applied for remote employees.
+
+Insufficient logging and monitoring: Security logs were not comprehensive, delaying detection of the attack.
+
+Hybrid cloud complexity: Mismanagement of cloud resources increased the attack surface.
+
+Lack of proactive vulnerability assessment: No regular security audits or penetration testing were performed to detect API vulnerabilities.
+
+\bigskip
+
+\noindent\textbf{Suggest two Disaster Recovery strategies to restore services and two Business Continuity measures to maintain operations.}
+
+Disaster Recovery (DR) Strategies: Restore encrypted backups: Use regularly maintained and tested backups to recover patient data and billing information quickly.
+
+Reconfigure and patch the compromised API: Apply security patches, implement strong access controls, and validate API security before resuming operations.
+
+Business Continuity (BC) Measures: Activate a secondary secure environment: Redirect telehealth services to a preconfigured failover system to minimize downtime.
+
+Communicate proactively with users: Inform patients and staff about the incident and provide updates on expected service restoration to maintain trust.
+
+\bigskip
+
+\noindent\textbf{How would NIST and GDPR frameworks guide CloudHealth Inc. in responding to this incident?}
+
+NIST:
+
+Provides structured guidance for identifying, protecting, detecting, responding, and recovering from security incidents.
+
+Helps CloudHealth implement risk-based security controls, incident response procedures, and post-incident improvement plans.
+
+GDPR:
+
+Requires timely notification to regulators and affected individuals in case of a personal data breach.
+
+Guides implementation of privacy and data protection measures, ensuring compliance and accountability.
+
+\bigskip
+
+\noindent\textbf{How can FaaS and serverless computing impact security planning?}
+
+Increased attack surface: Serverless functions can be exposed via APIs, increasing the number of entry points for attackers.
+
+Short-lived execution environment: Traditional security tools may not monitor ephemeral functions effectively, requiring specialized logging and monitoring.
+
+Shared responsibility model: Security of the underlying infrastructure is managed by the provider, but application logic and data security remain the organization’s responsibility.
+
+Need for granular IAM and secure coding: Each function must have minimal permissions and be designed to avoid vulnerabilities.
+
+\bigskip
+
+\noindent\textbf{If you were the IT security officer, what policy changes would you implement immediately to reduce future risks?}
+
+Enforce multi-factor authentication (MFA) for all remote access.
+
+Implement regular security audits and penetration testing for APIs and cloud resources.
+
+Establish comprehensive logging and continuous monitoring for hybrid and serverless environments.
+
+Apply strict access control policies following the principle of least privilege.
+
+Introduce employee security awareness training, focusing on cloud security and remote work best practices.
+
+Develop formalized Incident Response, Disaster Recovery, and Business Continuity Plans with regular testing.
+
+Ensure compliance with GDPR and other relevant data protection regulations.

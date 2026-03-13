@@ -1,0 +1,137 @@
+\subsection{Part A: Test Artifacts and Functional Testing}
+
+\indent 
+
+A simple online shopping feature is Login $\rightarrow$ Add to Cart $\rightarrow$ Checkout $\rightarrow$ Payment.
+
+Based on this feature:
+
+\bigskip
+
+\noindent \textbf{Write 2 test cases for login functionality (Remember the components of a test case)}.
+
+Example:
+
+Test Case ID: TC\_Login\_01
+
+Description: Verify that a registered user can log in successfully.
+
+Preconditions: User must be registered and have valid credentials.
+
+Test Steps:
+
+Open the login page. Enter valid username and password. Click the “Login” button. Expected Result: User is redirected to the homepage/dashboard. Actual Result: To be filled during testing.
+
+Status: Pass/Fail
+
+Remarks: N/A
+
+\bigskip
+
+\noindent\textbf{Identify test data for valid, invalid, and boundary scenarios.}
+
+Example:
+
+Valid: username = user1@example.com, password = Password123
+
+Invalid: username = user1@example.com, password = WrongPass
+
+Boundary: Password exactly at minimum length (e.g., 8 characters), maximum length (e.g., 20 characters)
+
+\bigskip
+
+\noindent\textbf{Map each test case to the corresponding testing level (Unit, Integration, System, UAT).}
+
+Example:
+
+Unit Testing (for login function logic) and System Testing (end-to-end login validation)
+
+\subsection{Part B: Performance & Non-Functional Testing Simulation}
+
+\indent 
+
+Scenario: E-commerce platform experiences slow checkout during Black Friday.
+
+Based on this information:
+
+\bigskip
+
+\noindent\textbf{Which type of performance testing should be performed? (Load, Stress, Soak)}
+
+Load Testing: To simulate normal and peak traffic (expected high number of concurrent users).
+
+Stress Testing: To determine system limits under extreme traffic beyond expected peaks.
+
+Soak Testing: Optional, to check system stability over long periods of high traffic.
+
+Primary focus here: Load Testing (peak load simulation) and optionally Stress Testing.
+
+\bigskip
+
+\noindent\textbf{How would QA design tests to simulate 1000+ concurrent users?}
+
+Example:
+
+Use a performance testing tool (e.g., JMeter, LoadRunner, Gatling).
+
+Define virtual users (VUs) to simulate 1000+ simultaneous users.
+
+Create realistic user scenarios: login $\rightarrow$ browse $\rightarrow$ add to cart $\rightarrow$ checkout $\rightarrow$ payment.
+
+Gradually ramp up users to identify system bottlenecks.
+
+Run multiple iterations to mimic peak traffic conditions.
+
+\bigskip
+
+\noindent\textbf{What metrics would you monitor? (Response time, throughput, error rate)}
+
+Example:
+
+Response Time: Time to complete transactions or page load time.
+
+Throughput: Number of transactions per second.
+
+Error Rate: Failed transactions or failed server responses.
+
+Resource Utilization: CPU, memory, network, database performance.
+
+Latency: Delay in server response under load.
+
+\subsection{Part C: Professional Issues \& QA Standards}
+
+\indent
+
+Scenario: A critical bug in a banking app is discovered hours before release. Management pressures the QA team to ignore it.
+
+Based on this information:
+
+\bigskip
+
+\noindent\textbf{Identify ethical issues.}
+
+Releasing software with a known critical bug could harm users or financial systems. QA professionals face pressure to compromise integrity for deadlines. Potential violations of professional ethics and legal compliance.
+
+\bigskip
+
+\noindent\textbf{Discuss the role of ISO 9000, ISO 27001, and QA governance in handling the situation.}
+
+ISO 9000: Ensures a quality management system; mandates that defects are documented, addressed, and reviewed.
+
+ISO 27001: Addresses information security, ensuring critical security flaws are fixed before release.
+
+QA Governance: Provides structured risk-based decision-making, audits, and accountability, ensuring QA can escalate critical issues.
+
+\bigskip
+
+\noindent\textbf{Propose actions QA should take.}
+
+Document the defect clearly, including impact assessment.
+
+Escalate to management and stakeholders via formal channels.
+
+Refuse to approve release until critical defect is resolved.
+
+Recommend patch scheduling or release delay to ensure user safety and regulatory compliance.
+
+Follow QA governance frameworks and ethical standards to maintain professional integrity.

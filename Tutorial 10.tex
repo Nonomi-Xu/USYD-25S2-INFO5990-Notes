@@ -1,0 +1,116 @@
+\subsection{Part A – Discussion}
+
+\indent 
+
+As a team discuss within the class the following:
+
+\noindent\textbf{What is the main goal of information security?}
+
+To protect the confidentiality, integrity, and availability (CIA triad) of data, systems, and organizational assets from threats, whether accidental or malicious, while enabling business continuity and compliance with legal and regulatory requirements.
+
+\noindent\textbf{Why has cloud adoption changed the way organizations approach IT security?}
+
+Cloud adoption introduces shared responsibility between the provider and the organization, increases the attack surface, and requires new security approaches for virtualized infrastructure, remote access, and data stored across multiple locations. 
+
+Organizations must implement strong IAM, encryption, monitoring, and compliance practices to secure cloud environments.
+
+\noindent\textbf{The different types of Cloud deployment models and services}
+
+Deployment Models:
+
+\begin{itemize}
+    \item Public Cloud: Services provided over the internet by a third party (e.g., AWS, Azure).
+    \item Private Cloud: Cloud infrastructure dedicated to a single organization.
+    \item Hybrid Cloud: Combination of public and private clouds, offering flexibility.
+    \item Community Cloud: Shared infrastructure for a specific group or industry
+\end{itemize}
+
+Service Models:
+
+\begin{itemize}
+    \item IaaS (Infrastructure as a Service): Provides virtualized computing resources.
+    \item PaaS (Platform as a Service): Platform for application development without managing infrastructure.
+    \item SaaS (Software as a Service): Fully managed software accessible via web.
+    \item FaaS (Function as a Service): Serverless computing where code runs in response to events.
+\end{itemize}
+
+\subsection{Part B – Case Study Analysis}
+
+Background:
+
+DataLeak Ltd. is a mid-sized HR and payroll services company that migrated its systems to a hybrid cloud. Payroll and client data are hosted on a public cloud (IaaS), while sensitive employee records remain in a private on-premise server. The company adopted remote work for its employees using VPN and shared cloud storage.
+
+Incident:
+
+A cybersecurity firm notifies DataLeak Ltd. that sensitive payroll data for 15,000 employees has been found publicly accessible on the internet. Investigation reveals that an S3 bucket (public cloud storage) was misconfigured — it lacked authentication restrictions.
+
+Additionally, several employees used weak passwords, and multi-factor authentication (MFA) was disabled to simplify remote access.
+
+Impact:
+
+\begin{itemize}
+    \item Exposure of names, salary details, and tax information.
+    \item Violation of GDPR and local privacy laws.
+    \item Reputational damage and potential regulatory fines.
+    \item  Business operations disrupted as access to cloud storage was suspended for review.
+\end{itemize}
+
+As a group discuss the following
+
+\bigskip
+
+\noindent\textbf{Identify the primary causes of the security incident.}
+
+Misconfigured S3 bucket allowed public access to sensitive data. Weak employee passwords increased the risk of unauthorized access. Multi-factor authentication (MFA) was disabled, reducing protection for remote access. Lack of proper monitoring and security audits to detect misconfigurations.
+
+\bigskip
+
+\noindent\textbf{Which domains of information security (cyber, data, operational, physical) were breached?}
+
+Cyber Security: Unauthorized access to cloud systems.
+
+Data Security: Exposure of payroll and personal data.
+
+Operational Security: Weak remote access policies and inadequate monitoring. (Physical security not directly affected in this case.)
+
+\bigskip
+
+\noindent\textbf{How would a proper Incident Response Plan have changed the outcome?}
+
+Immediate detection and containment of the breach.
+
+Clear roles and responsibilities to notify affected parties and regulatory bodies quickly.
+
+Faster recovery by identifying impacted systems, securing misconfigured storage, and restoring data from backups.
+
+Lessons learned would prevent recurrence through policy and training updates.
+
+\bigskip
+
+\noindent\textbf{Suggest at least two Disaster Recovery actions and two Business Continuity measures.}
+
+Disaster Recovery (DR) Actions: Restore data from secure, encrypted backups. Reconfigure cloud storage to correct security misconfigurations.
+
+Business Continuity (BC) Measures: Temporarily switch to a secondary secure storage environment to continue payroll processing. Communicate proactively with clients about the incident and expected resolution time to maintain trust.
+
+\bigskip
+
+\noindent\textbf{What cloud security controls (technical or procedural) could have prevented the breach?}
+
+Strong IAM policies including MFA for all users.
+
+Regular configuration audits using tools like AWS Config or Cloud Security Posture Management (CSPM).
+
+Data encryption at rest and in transit.
+
+Access logging and monitoring to detect suspicious activity.
+
+Employee security awareness training to prevent accidental misconfigurations.
+
+\bigskip
+
+\noindent\textbf{How do NIST and GDPR frameworks guide the company’s next steps?}
+
+NIST: Provides guidelines for identifying, protecting, detecting, responding to, and recovering from incidents (Incident Response Plan alignment). Encourages risk-based security controls, continuous monitoring, and regular audits.
+
+GDPR: Requires notification to affected individuals and regulators in case of data breach, ensures personal data protection, enforces accountability, and mandates corrective actions to prevent future breaches.
